@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#404040"
+    android:layoutDirection="ltr"
+    android:textDirection="ltr"
+    tools:context=".ui.view.fragment.DetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_320sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageBackground"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.8"
+            android:background="@color/black" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/backIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_14sdp"
+        android:src="@drawable/back_ios_new"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/movieItem"
+        android:layout_width="@dimen/_153sdp"
+        android:layout_height="@dimen/_230sdp"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/backIcon">
+
+        <ImageView
+            android:id="@+id/movieImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/movieItem"
+        app:layout_constraintStart_toStartOf="@id/movieItem"
+        app:layout_constraintTop_toBottomOf="@id/movieItem">
+
+        <TextView
+            android:id="@+id/movieName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:text="@string/app_name"
+            android:textAllCaps="false"
+            android:textColor="#FF9800"
+            android:textSize="@dimen/_19ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/movieGenres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/app_name"
+            android:textColor="#DDFFFFFF"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/movieName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/movieDetail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <TextView
+            android:id="@+id/rateName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:text="Rate"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@id/rateParent"
+            app:layout_constraintEnd_toEndOf="@id/rateParent"
+            app:layout_constraintStart_toStartOf="@id/rateParent" />
+
+        <TextView
+            android:id="@+id/dateName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:text="Date"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@id/dateParent"
+            app:layout_constraintEnd_toEndOf="@id/dateParent"
+            app:layout_constraintStart_toStartOf="@id/dateParent" />
+
+        <TextView
+            android:id="@+id/timeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:text="Time"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@id/timeParent"
+            app:layout_constraintEnd_toEndOf="@id/timeParent"
+            app:layout_constraintStart_toStartOf="@id/timeParent" />
+
+        <TextView
+            android:id="@+id/langName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:text="Language"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@id/langParent"
+            app:layout_constraintEnd_toEndOf="@id/langParent"
+            app:layout_constraintStart_toStartOf="@id/langParent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rateParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/dateParent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/imageRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/star_rate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="7.0"
+                android:textColor="#FF9800"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/imageRate"
+                app:layout_constraintTop_toBottomOf="@id/imageRate" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="/10"
+                android:textColor="#E1FFFFFF"
+                android:textSize="@dimen/_8ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/rate"
+                app:layout_constraintStart_toEndOf="@id/rate"
+                app:layout_constraintTop_toTopOf="@id/rate" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dateParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/timeParent"
+            app:layout_constraintStart_toEndOf="@id/rateParent">
+
+            <ImageView
+                android:id="@+id/imageDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/calendar_month"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="2020"
+                android:textColor="#E1FFFFFF"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/imageDate"
+                app:layout_constraintStart_toStartOf="@id/imageDate"
+                app:layout_constraintTop_toBottomOf="@id/imageDate" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/timeParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/langParent"
+            app:layout_constraintStart_toEndOf="@id/dateParent">
+
+            <ImageView
+                android:id="@+id/imageTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/access_time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="2h 14m"
+                android:textColor="#E1FFFFFF"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/imageTime"
+                app:layout_constraintStart_toStartOf="@id/imageTime"
+                app:layout_constraintTop_toBottomOf="@id/imageTime" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/langParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/timeParent">
+
+            <ImageView
+                android:id="@+id/imageLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/language"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="Farsi"
+                android:textColor="#E1FFFFFF"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/imageLanguage"
+                app:layout_constraintStart_toStartOf="@id/imageLanguage"
+                app:layout_constraintTop_toBottomOf="@id/imageLanguage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:backgroundTint="#DDFFFFFF"
+        android:layout_margin="@dimen/_8sdp"
+        app:layout_constraintBottom_toTopOf="@id/movieSummary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:id="@+id/movieSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:fontFamily="@font/tahomabd"
+        android:maxLength="450"
+        android:padding="@dimen/_3sdp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus accusantium amet asperiores assumenda atque beatae corporis culpa cupiditate debitis doloremque dolores dolorum earum enim esse explicabo facere ipsa, ipsum iusto laborum nam nesciunt placeat praesentium quae quasi reprehenderit sed sint soluta suscipit, veniam veritatis vero voluptatem voluptates voluptatibus voluptatum"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieDetail" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:backgroundTint="#DDFFFFFF"
+        android:layout_margin="@dimen/_8sdp"
+        app:layout_constraintTop_toBottomOf="@id/movieSummary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnWeb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:backgroundTint="#FF9800"
+        android:padding="@dimen/_8sdp"
+        android:text="Go to website"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/movieItem"
+        app:layout_constraintStart_toStartOf="@id/movieItem" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

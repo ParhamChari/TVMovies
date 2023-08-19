@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/movieItem"
+        android:layout_width="@dimen/_91sdp"
+        android:layout_height="@dimen/_137sdp"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_28sdp"
+        app:cardCornerRadius="@dimen/_6sdp"
+        app:cardElevation="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/movieImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/movieName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:text="@string/app_name"
+        android:textAllCaps="false"
+        android:textColor="#FF9800"
+        android:textSize="@dimen/_8ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/movieItem"
+        app:layout_constraintTop_toBottomOf="@id/movieItem" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
